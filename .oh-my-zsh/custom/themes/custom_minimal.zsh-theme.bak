@@ -1,0 +1,12 @@
+# Função para mostrar o nome do ambiente virtual
+virtualenv_info() {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    echo "($(basename $VIRTUAL_ENV))"
+  fi
+}
+
+# Prompt principal (esquerdo) - com a função para mostrar o nome do ambiente virtual
+PROMPT='%B%{%F{#bb00ff}%}%~%{$reset_color%}%b%f %{$fg[red]%}»%{$reset_color%} %{$fg[green]%}$(virtualenv_info)%{$reset_color%} '
+
+# Prompt secundário (direito) - com o nome do branch Git, se estiver dentro de um repositório
+RPROMPT='%{$fg[yellow]%}$(git branch 2>/dev/null | grep \* | sed "s/* //")%{$reset_color%}'

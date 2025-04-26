@@ -1,0 +1,10 @@
+{
+    "persistence":[
+        {
+            "image": "/ISOs/MX-23.iso",
+            "backend":[
+                "/persistence/mx-persist..dat"
+            ]
+        }
+    ]
+}
