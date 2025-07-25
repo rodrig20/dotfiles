@@ -1,0 +1,30 @@
+color-link comment         "#6a6a6a"         ; cinza escuro para comentários
+color-link constant        "#3ca4e6"         ; azul claro para constantes e literais
+color-link identifier      "#46c79e"         ; verde-água para nomes de variáveis
+color-link statement       "#f0b000"         ; amarelo dourado para palavras-chave (if, return)
+color-link symbol          "#ee8c3c"         ; laranja quente para símbolos e operadores
+color-link preproc         "#c678dd"         ; roxo elegante (pré-processador, macros)
+color-link type            "#a85fd0"         ; violeta escuro para tipos (int, float)
+color-link special         "#fa65b1"         ; rosa forte (caracteres especiais, escapes)
+color-link ignore          "default"
+color-link error           "default,#e93e3e" ; vermelho forte para erros
+color-link todo            "default,#ffcc00" ; amarelo vibrante para TODOs
+color-link hlsearch        "#1c1c1c,#fbefff" ; fundo rosa-claro para destaques
+color-link statusline      "#202020,#e1c4ff" ; barra de status suave e clara
+color-link indent-char     "#383838"         ; cinza discreto
+color-link line-number     "#808080"         ; cinza médio
+color-link current-line-number "#ff5a8a"     ; rosa escuro para linha atual
+color-link diff-added      "#7ad67a"         ; verde limão claro
+color-link diff-modified   "#f0c244"         ; amarelo pastel
+color-link diff-deleted    "#f75e5e"         ; vermelho suave
+color-link gutter-error    "default,#f75e5e" ; vermelho claro
+color-link gutter-warning  "#f0a000"         ; laranja vibrante
+# Cursor line ainda comentado
+#color-link cursor-line    "#ffffff,#2e1e3e"
+color-link color-column    "#f5ecff"         ; lavanda bem clara
+color-link type.extended   "default"
+color-link symbol.brackets "default"
+color-link preproc.shebang "comment"
+color-link match-brace     "default,#c792ea" ; roxo claro estiloso
+color-link tab-error       "#e00050"         ; rosa escuro
+color-link trailingws      "#e00050"         ; mesma cor para espaços em branco visíveis
