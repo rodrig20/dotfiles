@@ -1,0 +1,170 @@
+{
+	"position": "top",
+	"margin": "8 16 0",
+	"mod": "dock",
+	"modules-left": [
+		"hyprland/workspaces",
+		"temperature",
+		"bluetooth",
+		"custom/updates"
+	],
+	"modules-center": [
+		"hyprland/window",
+		"clock"
+	],
+	"modules-right": [
+		"tray",
+		"network",
+		"backlight",
+		"pulseaudio",
+		"pulseaudio#microphone",
+		"battery",
+		"custom/exit"
+	],
+	"hyprland/window": {
+		//"format": "{}",
+		"format": "",
+	},
+	"hyprland/workspaces": {
+		"persistent-workspaces": {
+			"*": [
+				1,
+				2,
+				3,
+				4
+			]
+		}
+	},
+	"tray": {
+		"icon-size": 18,
+		"spacing": 20
+	},
+	"network": {
+		"format-icons": [
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		],
+		"format-wifi": "{icon}",
+		"format-ethernet": "",
+		"format-linked": "󰄡",
+		"format-disconnected": "",
+		"tooltip-format": "{essid} ({signalStrength}%) - {ipaddr}",
+		"tooltip-format-ethernet": "{ifname} - {gwaddr}",
+		"tooltip-format-disconnected": "Disconnected"
+	},
+	"bluetooth": {
+		"format": "󰂯",
+		"format-disabled": "󰂲",
+		"format-connected": "󰂱 {num_connections}",
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"on-click-right": "blueman-manager",
+		"on-click": "~/.config/waybar/scripts/bluetooth"
+	},
+	"battery": {
+		"full-at": 95,
+		"states": {
+			"warning": 30,
+			"critical": 10
+		},
+		"format": "{icon}",
+		"format-plugged": "",
+		"format-charging": "󰂄",
+		"format-icons": [
+			"󰂎",
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹"
+		],
+		"tooltip-format": "{capacity}%"
+	},
+	"temperature": {
+		"hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+		"input-filename": "temp1_input",
+		"format": " {temperatureC}°C",
+		"critical-threshold": 80
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": "󰝟 0%",
+		"on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+		"on-click-right": "pavucontrol",
+		"reverse-scrolling": true,
+		"on-scroll-up": "wpctl set-volume -l 1.3  @DEFAULT_SINK@ 2%+",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 2%-",
+		"scroll-step": 1,
+		"format-icons": {
+			"headphone": "󱡏",
+			"hands-free": "󱡏",
+			"headset": "󱡏",
+			"default": [
+				"",
+				""
+			]
+		}
+	},
+	"clock": {
+		"format": "{:%R %a %m/%d}",
+		"tooltip-format": "{calendar}",
+		"calendar": {
+			"format": {
+				"months": "<span color='#864ad4'><b>{}</b></span>",
+				"days": "<span color='#58308c'><b>{}</b></span>",
+				"weekdays": "<span color='#614575'><b>{}</b></span>",
+				"today": "<span color='#b54ad4'><b><u>{}</u></b></span>"
+			}
+		}
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{icon} {percent}%",
+		"format-icons": [
+			"󰃞",
+			"󰃟",
+			"󰃠"
+		],
+		"reverse-scrolling": true,
+		"on-scroll-up": "~/.config/waybar/scripts/brightness --inc",
+		"on-scroll-down": "~/.config/waybar/scripts/brightness --dec",
+		"min-length": 6
+	},
+	"pulseaudio#microphone": {
+		"format": "{format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": "  0%",
+		"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+		"on-click-right": "pavucontrol -t 4",
+		"reverse-scrolling": true,
+		"on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_SOURCE@ 2%+",
+		"on-scroll-down": "wpctl set-volume  @DEFAULT_SOURCE@ 2%-",
+		"scroll-step": 5
+	},
+	// Power Menu
+    "custom/exit": {
+        "format": "",
+        "tooltip-format": "Powermenu",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+    "custom/updates": {
+        "format": "{}",
+        "interval": 3600,
+        "exec": "~/.config/waybar/scripts/updatecheck --get",
+        "return-type": "json",
+        "exec-on-event": true,
+        "exec-if": "exit 0",
+        "signal": 8,
+        "on-click": "~/.config/waybar/scripts/updatecheck --update",
+     }
+	
+}

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+
+# Increase brightness
+inc_backlight() {
+    brightnessctl s 1%+
+}
+
+# Decrease brightness (check if brightness is greater than 3%)
+dec_backlight() {
+    current_brightness=$(brightnessctl g)
+    max_brightness=$(brightnessctl max)
+
+    current_percentage=$((current_brightness * 100 / max_brightness))
+
+    if [ "$current_percentage" -gt 3 ]; then
+        brightnessctl s 1%-
+    fi
+}
+
+
+if [[ "$1" == "--inc" ]]; then
+    inc_backlight
+elif [[ "$1" == "--dec" ]]; then
+    dec_backlight
+else
+    get_backlight
+fi

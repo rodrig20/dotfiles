@@ -1,0 +1,46 @@
+#!/bin/bash
+
+function get_updates() {
+    pacman_updates=$(checkupdates 2>/dev/null)
+    aur_updates=$(yay -Qua 2>/dev/null)
+
+    count_pacman=$(echo "$pacman_updates" | sed '/^\s*$/d' | wc -l)
+    count_aur=$(echo "$aur_updates" | sed '/^\s*$/d' | wc -l)
+    total_updates=$((count_pacman + count_aur))
+
+    if [[ $total_updates -eq 0 ]]; then
+        echo '{"text": " ", "tooltip": "Up to Date", "class": "up-to-date"}'
+    else
+        tooltip=""
+
+        if [[ -n "$pacman_updates" ]]; then
+            tooltip+="[Pacman]\n$pacman_updates\n"
+        fi
+
+        if [[ -n "$aur_updates" ]]; then
+            tooltip+="[AUR]\n$aur_updates"
+        fi
+
+        tooltip_json=$(echo -e "$tooltip" | sed 's/"/\\"/g' | sed ':a;N;$!ba;s/\n/\\n/g')
+
+        echo "{\"text\": \"󰚰 $total_updates\", \"tooltip\": \"$tooltip_json\", \"class\": \"updates-available\"}"
+    fi
+}
+
+function run_update() {
+    ghostty -e "yay -Syu --noconfirm"
+}
+
+# --- Argument parsing ---
+case "$1" in
+    --get)
+        get_updates
+        ;;
+    --update)
+        run_update
+        ;;
+    *)
+        echo "Run: $0 --get | --update"
+        exit 1
+        ;;
+esac
