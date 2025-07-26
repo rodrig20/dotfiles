@@ -1,0 +1,20 @@
+
+@theme "~/.config/rofi/themes/rounded-purple-dark.rasi"
+
+configuration {
+	display-drun: "Apps:";
+	font: "FiraCode Nerd Font Regular 15";
+	display-window: "Windows:";
+	display-run: "Run:";
+	modi: "run,drun,window";
+
+	kb-page-prev: "";
+	kb-page-next: "";
+	kb-row-first: "Page_Up";
+	kb-row-last: "Page_Down";
+
+	kb-move-front: "Home,KP_Home";
+	kb-move-end: "End,KP_End";
+
+	show-icons: true;
+}
