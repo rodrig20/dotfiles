@@ -22,8 +22,8 @@
 		"custom/exit"
 	],
 	"hyprland/window": {
-		//"format": "{}",
-		"format": "",
+		//"format": "{}"
+		"format": ""
 	},
 	"hyprland/workspaces": {
 		"persistent-workspaces": {
@@ -158,13 +158,11 @@
     },
     "custom/updates": {
         "format": "{}",
-        "interval": 3600,
+        "interval": 1200,
         "exec": "~/.config/waybar/scripts/updatecheck --get",
         "return-type": "json",
         "exec-on-event": true,
-        "exec-if": "exit 0",
         "signal": 8,
-        "on-click": "~/.config/waybar/scripts/updatecheck --update",
+        "on-click": "~/.config/waybar/scripts/updatecheck --update"
      }
-	
 }

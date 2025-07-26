@@ -28,8 +28,20 @@ function get_updates() {
 }
 
 function run_update() {
-    ghostty -e "yay -Syu --noconfirm"
+    ghostty -e "yay -Syu --noconfirm && echo -e \"\n==========================\nPress Enter to continue...\n==========================\n\" && read"
 }
+
+
+FLAG_FILE="/run/user/$UID/waybar-updates/flag"
+
+if [ ! -f "$FLAG_FILE" ]; then
+    mkdir -p "/run/user/$UID/waybar-updates"
+    touch "$FLAG_FILE"
+    echo '{"text": "", "tooltip": "Up to Date", "class": "up-to-date"}'
+    pkill -RTMIN+8 waybar
+    exit 0;
+fi
+
 
 # --- Argument parsing ---
 case "$1" in
