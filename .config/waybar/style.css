@@ -41,7 +41,7 @@ tooltip label {
 
 #workspaces button:hover {
 	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-	background-image: linear-gradient(to right, #31103b00, #31103b00); 
+	background-image: linear-gradient(to right, #00000000, #00000000);
 	border-color: #77308c;
 	color: #77308c;
     background-color: #31103b;
@@ -65,7 +65,7 @@ tooltip label {
 #custom-exit,
 #custom-updates{
     padding: 0px 14px;
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: #202429;
 }
 
 #tray {
@@ -100,7 +100,7 @@ tooltip label {
 
 #custom-updates{
     border-radius: 0 24px 24px 0 ;
-    padding-right: 24px;    
+    padding-right: 24px;
 }
 
 
