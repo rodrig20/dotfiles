@@ -3,7 +3,7 @@
 set -e  # Exit immediately if a command exits with a non-zero status
 
 echo "Installing required packages..."
-sudo pacman -S --needed qt5ct qt5-wayland qt6ct kdeglobals lxappearance
+sudo pacman -S --needed qt5ct qt5-wayland qt6ct kdeglobals lxappearance kvantum
 
 echo "Installing icon theme..."
 ICON_TMP_DIR="/tmp/new_icon_theme"
