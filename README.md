@@ -1,6 +1,6 @@
 # Dotfiles
 
-Personal configurations for my Arch Linux setup, focused on a simple, elegant workflow consistent with the Lavanda Dark look.
+Personal configurations for my Arch Linux setup, focused on a simple, elegant workflow consistent with the Purple Dark look.
 
 ---
 
