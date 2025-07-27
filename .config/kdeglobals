@@ -1,0 +1,12 @@
+[Icons]
+Theme=Vimix-amethyst-dark
+
+[KDE]
+ShowDeleteCommand=false
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
+
+[UiSettings]
+ColorScheme=LavandaDark
