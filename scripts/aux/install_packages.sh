@@ -12,6 +12,7 @@ sudo pacman -S --needed \
     hyprpaper \
     hyprlock \
     hypridle \
+    hyprshot \
     fuzzel \
     waybar \
 \
@@ -33,16 +34,16 @@ sudo pacman -S --needed \
 
 if ! command -v yay &> /dev/null; then
     echo -e "\e[31myay is not installed. Installing yayn...\e[0m"
-    
+
 	YAY_TEMP_DIR="$HOME/yay-temp"
-	 
-	 mkdir -p "$YAY_TEMP_DIR"
-	 cd "$YAY_TEMP_DIR"
-	 
-	 git clone https://aur.archlinux.org/yay.git .
-	 makepkg -si
-	 cd "$HOME"
-	 
+
+	mkdir -p "$YAY_TEMP_DIR"
+    cd "$YAY_TEMP_DIR"
+
+    git clone https://aur.archlinux.org/yay.git .
+	makepkg -si
+	cd "$HOME"
+
 	 rm -rf "$YAY_TEMP_DIR"
 else
    	echo -e "\e[32myay is already installed\e[0m"
