@@ -14,4 +14,14 @@ cd "$ICON_TMP_DIR"
 cd -
 rm -rf "$ICON_TMP_DIR"
 
+echo "Installing lunar-purple SDDM theme..."
+sudo rm -rf /usr/share/sddm/themes/lunar-purple-sddm
+sudo git clone --depth=1 https://github.com/rodrig20/lunar-purple-sddm.git /usr/share/sddm/themes/lunar-purple-sddm
+
+echo "Configuring SDDM to use lunar-purple theme..."
+
+echo -e "\nTo activate the lunar-purple SDDM theme, add or update the following in your /etc/sddm.conf:\n"
+echo "[Theme]"
+echo "Current=lunar-purple-sddm"
+
 echo "Done! Please reboot to apply changes."
