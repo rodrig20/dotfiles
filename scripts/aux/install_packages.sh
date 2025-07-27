@@ -26,6 +26,8 @@ sudo pacman -S --needed \
     bluez-utils \
     blueman \
     pavucontrol \
+    network-manager \
+    network-manager-applet \
 \
     ghostty \
     dolphin

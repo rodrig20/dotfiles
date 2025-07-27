@@ -49,10 +49,14 @@
 		"format-wifi": "{icon}",
 		"format-ethernet": "",
 		"format-linked": "󰄡",
-		"format-disconnected": "",
+		"format-disconnected": "󰤮",
+		"format-disabled": "—",
 		"tooltip-format": "{essid} ({signalStrength}%) - {ipaddr}",
 		"tooltip-format-ethernet": "{ifname} - {gwaddr}",
-		"tooltip-format-disconnected": "Disconnected"
+		"tooltip-format-disconnected": "Disconnected",
+		"tooltip-format-disabled": "Disabled",
+		"on-click": "~/.config/waybar/scripts/wifi",
+		"on-click-right": "nm-connection-editor"
 	},
 	"bluetooth": {
 		"format": "󰂯",
