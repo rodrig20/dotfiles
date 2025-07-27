@@ -13,7 +13,6 @@ sudo pacman -S --needed \
     hyprlock \
     hypridle \
     hyprshot \
-    fuzzel \
     waybar \
 \
     ttf-font-awesome \
