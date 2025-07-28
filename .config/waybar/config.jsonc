@@ -50,13 +50,12 @@
 		"format-ethernet": "",
 		"format-linked": "󰄡",
 		"format-disconnected": "󰤮",
-		"format-disabled": "—",
+		"format-disabled": "",
 		"tooltip-format": "{essid} ({signalStrength}%) - {ipaddr}",
 		"tooltip-format-ethernet": "{ifname} - {gwaddr}",
 		"tooltip-format-disconnected": "Disconnected",
 		"tooltip-format-disabled": "Disabled",
-		"on-click": "~/.config/waybar/scripts/wifi",
-		"on-click-right": "nm-connection-editor"
+		"on-click": "~/.config/waybar/scripts/wifi"
 	},
 	"bluetooth": {
 		"format": "󰂯",
