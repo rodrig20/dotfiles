@@ -13,6 +13,7 @@ sudo pacman -S --needed \
     hyprlock \
     hypridle \
     hyprshot \
+    hyprpicker \
     waybar \
 \
     ttf-font-awesome \
@@ -27,7 +28,6 @@ sudo pacman -S --needed \
     blueman \
     pavucontrol \
     network-manager \
-    network-manager-applet \
 \
     ghostty \
     dolphin
