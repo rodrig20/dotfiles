@@ -30,7 +30,7 @@
 }
 {
     "label" : "windows",
-    "action" : "ghostty -e \"bash /home/rodri/.config/wlogout/scripts/sys_windows.sh\"",
+    "action" : "pkexec ~/.config/wlogout/scripts/sys_windows.sh",
     "text" : "Windows [W]",
     "keybind" : "w"
 }
