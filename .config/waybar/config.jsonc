@@ -6,6 +6,7 @@
 		"hyprland/workspaces",
 		"temperature",
 		"bluetooth",
+		"custom/caffeine",
 		"custom/updates"
 	],
 	"modules-center": [
@@ -167,5 +168,13 @@
         "exec-on-event": true,
         "signal": 8,
         "on-click": "~/.config/waybar/scripts/updatecheck --update"
+    },
+	"custom/caffeine": {
+        "format": "{}",
+        "interval": "once",
+        "exec": "~/.config/waybar/scripts/caffeine --get",
+        "return-type": "json",
+        "exec-on-event": true,
+        "on-click": "~/.config/waybar/scripts/caffeine --toggle"
      }
 }

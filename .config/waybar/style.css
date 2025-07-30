@@ -27,7 +27,7 @@ tooltip label {
 }
 
 #workspaces button {
-    min-width: 28px;
+    min-width: 20px;
     border-radius: 20px;
     border-width: 2px;
     margin: 8px 0;
@@ -63,6 +63,7 @@ tooltip label {
 #workspaces,
 #backlight,
 #custom-exit,
+#custom-caffeine,
 #custom-updates{
     padding: 0px 14px;
     background-color: #202429;

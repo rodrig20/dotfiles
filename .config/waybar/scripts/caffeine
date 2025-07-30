@@ -1,0 +1,48 @@
+#!/bin/bash
+
+WHO="Caffeine"
+WHY="Caffeine Mode"
+FLAG_FOLDER="/run/user/$UID/waybar_flags"
+FLAG_FILE_NAME="caffeine"
+FLAG_FILE="$FLAG_FOLDER/$FLAG_FILE_NAME"
+
+start_caffeine() {
+    mkdir -p "$FLAG_FOLDER"
+    touch "$FLAG_FILE"
+
+    systemd-inhibit --what=idle --who="$WHO" --why="$WHY" --mode=block \
+        inotifywait -e delete_self "$FLAG_FILE" >/dev/null 2>&1
+}
+
+stop_caffeine() {
+    rm -f "$FLAG_FILE"
+}
+
+get_status() {
+    if [[ -f "$FLAG_FILE" ]]; then
+        echo "{\"text\": \"󰅶\", \"class\": \"enable\"}"
+    else
+        echo "{\"text\": \"󰾪\", \"class\": \"disable\"}"
+    fi
+}
+
+toggle() {
+    if [[ -f "$FLAG_FILE" ]]; then
+        stop_caffeine
+    else
+        start_caffeine &
+    fi
+}
+
+case "$1" in
+    --toggle)
+        toggle
+        ;;
+    --get)
+        get_status
+        ;;
+    *)
+        echo "Uso: $0 [--toggle|--get]"
+        exit 1
+        ;;
+esac
