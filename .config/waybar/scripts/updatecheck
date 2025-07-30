@@ -32,10 +32,10 @@ function run_update() {
 }
 
 
-FLAG_FILE="/run/user/$UID/waybar-updates/flag"
+FLAG_FILE="/run/user/$UID/waybar_flags/updates"
 
 if [ ! -f "$FLAG_FILE" ]; then
-    mkdir -p "/run/user/$UID/waybar-updates"
+    mkdir -p "/run/user/$UID/waybar_flags"
     touch "$FLAG_FILE"
     echo '{"text": "", "tooltip": "Up to Date", "class": "up-to-date"}'
     pkill -RTMIN+8 waybar
