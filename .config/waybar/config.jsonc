@@ -74,7 +74,7 @@
 			"warning": 30,
 			"critical": 10
 		},
-		"format": "{icon}",
+		"format": "{icon} {capacity}%",
 		"format-plugged": "",
 		"format-charging": "󰂄",
 		"format-icons": [
@@ -90,7 +90,7 @@
 			"󰂂",
 			"󰁹"
 		],
-		"tooltip-format": "{capacity}%"
+		"tooltip-format": ""
 	},
 	"temperature": {
 		"hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
