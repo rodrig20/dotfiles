@@ -56,3 +56,6 @@ case "$1" in
         print_help
         ;;
 esac
+
+
+# Add "password-store": "gnome-libsecret", to argv.json on .vscode folder
