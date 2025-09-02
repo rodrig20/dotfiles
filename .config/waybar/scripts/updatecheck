@@ -28,7 +28,7 @@ function get_updates() {
 }
 
 function run_update() {
-    ghostty -e "yay -Syu --noconfirm && echo -e \"\n==========================\nPress Enter to continue...\n==========================\n\" && read"
+    ghostty -e "yay -Syu --noconfirm; echo -e \"\n==========================\nPress Enter to continue...\n==========================\n\"; read"
 }
 
 
