@@ -10,17 +10,17 @@ shopt -s dotglob
 for item in "$DOTFILES_DIR"/*; do
     name="$(basename "$item")"
 
-    # Skip the scripts folder, .git and .gitignore
-    if [[ "$name" == "scripts" || "$name" == ".git" || "$name" == ".gitignore" ]]; then
+    # Skip non-dotfiles, except .config, .git and .gitignore
+    if [[ "$name" != .* && "$name" != ".config" || "$name" == ".git" || "$name" == ".gitignore"]]; then
         continue
     fi
 
-    # If it's a .config directory, handle each app inside it
+    # Handle .config specially
     if [[ "$name" == ".config" && -d "$item" ]]; then
         for app in "$item"/*; do
             app_name="$(basename "$app")"
 
-            # Also skip .gitignore inside .config
+            # Skip .gitignore inside .config
             if [[ "$app_name" == ".gitignore" ]]; then
                 continue
             fi
@@ -41,7 +41,7 @@ for item in "$DOTFILES_DIR"/*; do
             ln -s "$app" "$target"
         done
     else
-        # Link dotfiles (like .app1, .app2) directly to home
+        # Link dotfiles directly to home
         target="$HOME/$name"
 
         if [[ -e "$target" && ! -L "$target" ]]; then
