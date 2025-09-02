@@ -8,4 +8,5 @@ SUBDIR="$SCRIPT_DIR/aux"
 # Run Scripts
 bash "$SUBDIR/install_packages.sh"
 bash "$SUBDIR/create_sym.sh"
+bash "$SUBDIR/personalization.sh"
 bash "$SUBDIR/sddm.sh"

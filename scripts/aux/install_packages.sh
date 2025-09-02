@@ -30,6 +30,7 @@ sudo pacman -S --needed \
     networkmanager \
 \
     ghostty \
+    zsh \
     dolphin
 
 
